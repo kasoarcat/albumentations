@@ -92,17 +92,15 @@ class DataProcessor:
             return data
         for data_name in self.data_fields:
             for field in self.params.label_fields:
-                print('data_name:', data_name)
-                print('field:', field)
-                print('data[data_name]:', data[data_name])
-                print('data[field]:', data[field])
+                # print('data_name:', data_name)
+                # print('field:', field)
+                # print('data[data_name]:', data[data_name])
+                # print('data[field]:', data[field])
 
                 # 只有一個資料，不是list
                 if type(data[field]) == int:
                     data[field] = [data[field]]
                     data[data_name] = [data[data_name]]
-                    print('data[data_name]:', data[data_name])
-                    print('data[field]:', data[field])
 
                 assert len(data[data_name]) == len(data[field])
                 data_with_added_field = []
