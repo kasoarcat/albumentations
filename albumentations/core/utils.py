@@ -96,6 +96,11 @@ class DataProcessor:
                 print('field:', field)
                 print('data[data_name]:', data[data_name])
                 print('data[field]:', data[field])
+
+                # 只有一個資料，不是list
+                if data[field] == int:
+                    data[field] = [data[field]]
+                    data[data_name] = [data[data_name]]
                 
                 assert len(data[data_name]) == len(data[field])
                 data_with_added_field = []
