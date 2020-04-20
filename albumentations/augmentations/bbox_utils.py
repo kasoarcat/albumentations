@@ -29,7 +29,11 @@ class BboxProcessor(DataProcessor):
             print('data_name:', data_name)
             print('data[data_name]:', data[data_name])
             print('data_exists:', data_exists)
-            if data_exists and len(data[data_name][0]) < 5:
+            print('self.params.label_fields:', self.params.label_fields)
+
+            # 判斷二維陣列，第一維是數量，第二維是bbox len=4
+            # 判斷一維陣列，數量是bbox len=4
+            if (data_exists and len(data[data_name][0]) < 5) or  (if len(data[data_name]) < 5):
                 if self.params.label_fields is None:
                     raise ValueError(
                         "Please specify 'label_fields' in 'bbox_params' or add labels to the end of bbox "
