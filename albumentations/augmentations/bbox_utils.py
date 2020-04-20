@@ -33,7 +33,7 @@ class BboxProcessor(DataProcessor):
 
             # 判斷二維陣列，第一維是數量，第二維是bbox len=4
             # 判斷一維陣列，數量是bbox len=4
-            if (data_exists and len(data[data_name][0]) < 5) or (len(data[data_name]) < 5):
+            if (type(data[data_name][0]) == float and len(data[data_name]) < 5) or (data_exists and len(data[data_name][0]) < 5):
                 if self.params.label_fields is None:
                     raise ValueError(
                         "Please specify 'label_fields' in 'bbox_params' or add labels to the end of bbox "
