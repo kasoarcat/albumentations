@@ -33,7 +33,7 @@ class BboxProcessor(DataProcessor):
                         "because bboxes must have labels"
                     )
         if self.params.label_fields:
-            print('label_fields:', self.params.label_fields)
+            # print('label_fields:', self.params.label_fields)
             if not all(l in data.keys() for l in self.params.label_fields):
                 raise ValueError("Your 'label_fields' are not valid - them must have same names as params in dict")
 
