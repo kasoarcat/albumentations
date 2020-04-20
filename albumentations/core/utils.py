@@ -94,6 +94,9 @@ class DataProcessor:
             for field in self.params.label_fields:
                 print('data_name:', data_name)
                 print('field:', field)
+                print('data[data_name]:', data[data_name])
+                print('data[field]:', data[field])
+                
                 assert len(data[data_name]) == len(data[field])
                 data_with_added_field = []
                 for d, field_value in zip(data[data_name], data[field]):
