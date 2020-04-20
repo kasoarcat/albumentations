@@ -26,6 +26,7 @@ class BboxProcessor(DataProcessor):
     def ensure_data_valid(self, data):
         for data_name in self.data_fields:
             data_exists = data_name in data and len(data[data_name])
+            print('data:', data)
             print('data_name:', data_name)
             print('data[data_name]:', data[data_name])
             print('data_exists:', data_exists)
