@@ -98,7 +98,7 @@ class DataProcessor:
                 print('data[field]:', data[field])
 
                 # 只有一個資料，不是list
-                if data[field] == int:
+                if type(data[field]) == int:
                     data[field] = [data[field]]
                     data[data_name] = [data[data_name]]
                     print('data[data_name]:', data[data_name])
