@@ -2638,6 +2638,7 @@ class CLAHE(ImageOnlyTransform):
         self.tile_grid_size = tuple(tile_grid_size)
 
     def apply(self, img, clip_limit=2, **params):
+        print('img:', img.shape)
         return F.clahe(img, clip_limit, self.tile_grid_size)
 
     def get_params(self):
