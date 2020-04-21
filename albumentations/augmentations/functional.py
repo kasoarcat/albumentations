@@ -628,6 +628,7 @@ def _shift_image_uint8(img, value):
 def _shift_rgb_uint8(img, r_shift, g_shift, b_shift):
     if r_shift == g_shift == b_shift:
         h, w, c = img.shape
+        print('h, w, c:', h, w, c)
         img = img.reshape([h, w * c])
 
         return _shift_image_uint8(img, r_shift)
