@@ -657,6 +657,7 @@ def linear_transformation_rgb(img, transformation_matrix):
 
 @preserve_channel_dim
 def clahe(img, clip_limit=2.0, tile_grid_size=(8, 8)):
+    print('img.dtype:', img.dtype)
     if img.dtype != np.uint8:
         raise TypeError("clahe supports only uint8 inputs")
 
